@@ -48,33 +48,21 @@ router.put('/:id', async(req, res) => {
     if(banco !== null){
         if(tenisAtt.tamanho !== undefined){
             banco[0].tamanho = tenisAtt.tamanho
-        }else{
-            banco[0].tamanho = null
         }
         if(tenisAtt.marca !== undefined){
             banco[0].marca = tenisAtt.marca
-        }else{
-            banco[0].marca = null
         }
         if(tenisAtt.modelo !== undefined){
             banco[0].modelo = tenisAtt.modelo
-        }else{
-            banco[0].modelo = null
         }
         if(tenisAtt.cor !== undefined){
             banco[0].cor = tenisAtt.cor
-        }else{
-            banco[0].cor = null
         }
         if(tenisAtt.valor !== undefined){
             banco[0].valor = tenisAtt.valor
-        }else{
-            banco[0].valor = null
         }
         if(tenisAtt.img !==  undefined){
             banco[0].img = tenisAtt.img
-        }else{
-            banco[0].img = null
         }
 
         const tenisAtual = await sql`update tenis set tamanho = ${banco[0].tamanho}, marca = ${banco[0].marca}, modelo = ${banco[0].modelo}, cor = ${banco[0].cor}, valor = ${banco[0].valor}, img = ${banco[0].img} where id = ${id}`
