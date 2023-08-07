@@ -27,6 +27,6 @@ const rotaUsuario = require('./routes/usuario')
 app.use('/user', rotaUsuario)
 
 const rotaAdmin = require('./routes/administrador')
-app.use('/user', rotaAdmin)
+app.use('/admin', rotaAdmin)
 
 module.exports = app
