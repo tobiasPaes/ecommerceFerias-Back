@@ -16,6 +16,16 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false })) // permite apenas dados simples
 app.use(bodyParser.json()) // formato json no body
 
+/* ---- config CORS ---- */
+app.use((req, res) => {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Origin, X-Requested-With, Accept, Authorization')
+    if (req.method === 'OPTIONS') {
+        res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, PATCH, DELETE')
+        res.status(200).send({})
+    }
+})
+
 
 const rotaTenis = require('./routes/tenis')
 app.use('/tenis', rotaTenis)
