@@ -26,10 +26,7 @@ app.use('/pedido', rotaPedido)
 const rotaUsuario = require('./routes/usuario')
 app.use('/user', rotaUsuario)
 
-// const rotaUser = require
-// app.use('/user', rotaUser)
-
-
+const rotaAdmin = require('./routes/administrador')
+app.use('/user', rotaAdmin)
 
 module.exports = app
-
